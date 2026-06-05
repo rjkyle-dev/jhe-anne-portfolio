@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Milestones } from "@/components/portfolio/Milestones";
+import { Certificates } from "@/components/portfolio/Certificates";
+import { Projects } from "@/components/portfolio/Projects";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
+      { name: "description", content: "Portfolio of Jheanne Selle, an Information Technology graduate and aspiring web developer based in Panabo City." },
+      { property: "og:title", content: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
+      { property: "og:description", content: "Explore projects, skills, certificates, and milestones of an IT graduate passionate about web development." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <ScrollProgress />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Milestones />
+        <Certificates />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }

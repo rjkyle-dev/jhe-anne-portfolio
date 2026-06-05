@@ -22,9 +22,10 @@ export function Navbar() {
     <header className={`fixed top-0 inset-x-0 z-50 transition-all ${scrolled ? "py-3" : "py-5"}`}>
       <nav className={`mx-auto max-w-6xl px-4 sm:px-6 transition-all`}>
         <div className={`glass rounded-2xl px-5 py-3 flex items-center justify-between ${scrolled ? "shadow-soft" : ""}`}>
-          <a href="#home" className="font-display font-bold text-lg">
-            <span className="text-gradient">Jheanne</span><span className="text-foreground">.dev</span>
+          <a href="#home" className="font-display font-bold text-lg sr-only">
+            Home
           </a>
+
           <ul className="hidden md:flex items-center gap-1">
             {links.map((l) => (
               <li key={l.href}>

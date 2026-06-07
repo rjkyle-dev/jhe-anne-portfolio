@@ -22,7 +22,7 @@ export function Hero() {
             Hi, I'm <span className="text-gradient">Jheanne Selle</span>
           </h1>
           <div className="flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground font-medium px-6 py-3 rounded-xl shadow-glow hover:scale-[1.02] transition">
+            <a href={cvAsset.url} download="Jheanne-Selle-CV.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground font-medium px-6 py-3 rounded-xl shadow-glow hover:scale-[1.02] transition">
               Download CV
             </a>
             <a href="#contact" className="glass inline-flex items-center gap-2 text-foreground font-medium px-6 py-3 rounded-xl hover:bg-white/10 transition">

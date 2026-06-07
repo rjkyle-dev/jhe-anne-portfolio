@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Section } from "./Section";
-import { Award, GraduationCap, Code2, Sprout, ExternalLink, X } from "lucide-react";
-import topcitCert from "@/assets/topcit-certificate.pdf.asset.json";
-import pythonCert from "@/assets/python-certificate.pdf.asset.json";
-import treeCert from "@/assets/tree-planting-certificate.pdf.asset.json";
+import { Award, GraduationCap, Code2, Sprout, ExternalLink, X, ZoomIn } from "lucide-react";
+import topcitCert from "@/assets/topcit-certificate.png.asset.json";
+import pythonCert from "@/assets/python-certificate.png.asset.json";
+import treeCert from "@/assets/tree-planting-certificate.png.asset.json";
 
 type Milestone = {
   year: string;
@@ -79,14 +79,24 @@ export function Milestones() {
                     <p className="text-xs text-secondary mt-1">{it.category}</p>
                     <p className="text-sm text-muted-foreground mt-3">{it.description}</p>
                     {it.certificateUrl && (
-                      <div className={`mt-4 flex ${onRight ? "" : "sm:justify-end"}`}>
-                        <button
-                          onClick={() => setViewing(it)}
-                          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90 transition"
-                        >
-                          <ExternalLink className="w-4 h-4" /> View Certificate
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => setViewing(it)}
+                        className="relative mt-4 block w-full overflow-hidden rounded-xl glass p-2 group/cert focus:outline-none focus:ring-2 focus:ring-primary"
+                        aria-label={`View ${it.title} certificate`}
+                      >
+                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-white">
+                          <img
+                            src={it.certificateUrl}
+                            alt={`${it.title} certificate`}
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full object-contain transition-transform duration-500 ease-out group-hover/cert:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover/cert:opacity-100 transition-opacity" />
+                          <span className="absolute bottom-2 right-2 inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1.5 rounded-lg bg-gradient-primary text-primary-foreground shadow-glow opacity-0 group-hover/cert:opacity-100 transition-opacity">
+                            <ZoomIn className="w-3.5 h-3.5" /> View
+                          </span>
+                        </div>
+                      </button>
                     )}
                   </div>
                 </div>
@@ -104,7 +114,7 @@ export function Milestones() {
           onClick={() => setViewing(null)}
         >
           <div
-            className="glass rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col overflow-hidden"
+            className="glass rounded-2xl w-full max-w-5xl max-h-[90vh] flex flex-col overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/10">
@@ -130,7 +140,13 @@ export function Milestones() {
                 </button>
               </div>
             </div>
-            <iframe src={viewing.certificateUrl} title={viewing.title} className="flex-1 w-full bg-white" />
+            <div className="flex-1 overflow-auto bg-white flex items-center justify-center p-4">
+              <img
+                src={viewing.certificateUrl}
+                alt={viewing.title}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       )}

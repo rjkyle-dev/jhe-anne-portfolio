@@ -1,4 +1,5 @@
 import profileAsset from "@/assets/profile.png.asset.json";
+import cvAsset from "@/assets/cv.pdf.asset.json";
 
 export function Hero() {
   return (

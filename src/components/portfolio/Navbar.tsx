@@ -36,7 +36,7 @@ export function Navbar() {
             ))}
           </ul>
           <a href="#contact" className="hidden md:inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground text-sm font-medium px-4 py-2 rounded-xl shadow-glow hover:opacity-90 transition">
-            Hire Me
+            Contact Me
           </a>
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="md:hidden p-2 rounded-lg hover:bg-white/5">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>

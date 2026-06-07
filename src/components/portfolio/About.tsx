@@ -1,53 +1,61 @@
 import { Section } from "./Section";
-
-const stats = [
-  { label: "Projects", value: 12 },
-  { label: "Certificates", value: 18 },
-  { label: "Seminars", value: 9 },
-  { label: "Awards", value: 5 },
-];
+import aboutImg from "@/assets/about-me.jpg.asset.json";
 
 export function About() {
   return (
-    <Section id="about" eyebrow="About Me" title={"Get to |know me"} subtitle="A glimpse into my background, vision, and what drives me forward.">
-      <div className="grid lg:grid-cols-5 gap-8">
-        <div className="lg:col-span-3 glass rounded-3xl p-8 animate-fade-up">
-          <h3 className="text-2xl font-bold mb-4">Hello! I'm a passionate IT graduate.</h3>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            I am an Information Technology graduate passionate about web development, software
-            engineering, and digital innovation. I enjoy creating efficient, user-friendly systems
-            and continuously expanding my technical skills through projects, seminars, and certifications.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            My goal is to contribute to meaningful technology that empowers people, while growing
-            into a well-rounded developer who builds with intention and care.
+    <Section
+      id="about"
+      eyebrow="About Me"
+      title={"Get to |know me"}
+      subtitle="A glimpse into who I am and what inspires my creative work."
+    >
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="relative animate-fade-up flex justify-center lg:justify-start">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-primary rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-70 transition" />
+            <div className="relative glass rounded-[2rem] p-3 shadow-glow">
+              <img
+                src={aboutImg.url}
+                alt="Jhe-anne portrait"
+                className="w-full max-w-md h-[28rem] sm:h-[34rem] object-cover rounded-[1.5rem]"
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 text-sm shadow-soft hidden sm:block">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest">Creative</p>
+              <p className="font-semibold">Visual Designer</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="animate-fade-up" style={{ animationDelay: "0.15s" }}>
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6">
+            HI, I'm <span className="text-gradient">Jhe-anne!</span>
+          </h3>
+          <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+            I am passionate about creating visually appealing and meaningful designs using Canva.
+            I enjoy transforming ideas into engaging graphics, presentations, and digital content
+            that effectively communicate messages. With a strong interest in art, design, and
+            technology, I continuously explore new techniques and trends to enhance my skills and
+            create impactful visual experiences.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="glass rounded-2xl p-4">
-              <p className="text-xs text-muted-foreground uppercase">Education</p>
-              <p className="font-semibold mt-1">BS Information Technology</p>
+              <p className="text-xs text-muted-foreground uppercase">Focus</p>
+              <p className="font-semibold mt-1">Canva & Visual Design</p>
             </div>
             <div className="glass rounded-2xl p-4">
               <p className="text-xs text-muted-foreground uppercase">Location</p>
               <p className="font-semibold mt-1">Panabo City, Philippines</p>
             </div>
             <div className="glass rounded-2xl p-4">
-              <p className="text-xs text-muted-foreground uppercase">Focus</p>
-              <p className="font-semibold mt-1">Web & Software Dev</p>
+              <p className="text-xs text-muted-foreground uppercase">Interests</p>
+              <p className="font-semibold mt-1">Art, Design & Tech</p>
             </div>
             <div className="glass rounded-2xl p-4">
               <p className="text-xs text-muted-foreground uppercase">Availability</p>
-              <p className="font-semibold mt-1">Open to roles</p>
+              <p className="font-semibold mt-1">Open to projects</p>
             </div>
           </div>
-        </div>
-        <div className="lg:col-span-2 grid grid-cols-2 gap-4 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-          {stats.map((s) => (
-            <div key={s.label} className="glass rounded-3xl p-6 text-center hover:bg-white/10 transition">
-              <p className="text-4xl font-bold text-gradient">{s.value}+</p>
-              <p className="text-sm text-muted-foreground mt-2">{s.label}</p>
-            </div>
-          ))}
         </div>
       </div>
     </Section>

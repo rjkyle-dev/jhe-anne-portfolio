@@ -4,7 +4,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Milestones } from "@/components/portfolio/Milestones";
-import { Certificates } from "@/components/portfolio/Certificates";
+
 import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       { title: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
       { name: "description", content: "Portfolio of Jheanne Selle, an Information Technology graduate and aspiring web developer based in Panabo City." },
       { property: "og:title", content: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
-      { property: "og:description", content: "Explore projects, skills, certificates, and milestones of an IT graduate passionate about web development." },
+      { property: "og:description", content: "Explore projects, skills, and milestones of an IT graduate passionate about web development." },
     ],
   }),
   component: Index,
@@ -32,7 +32,6 @@ function Index() {
         <About />
         <Skills />
         <Milestones />
-        <Certificates />
         <Projects />
         <Contact />
       </main>

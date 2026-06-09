@@ -20,7 +20,7 @@ export function Hero() {
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" /> Available for opportunities
           </span>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
-            Hi, I'm <span className="text-gradient">Jheanne Selle</span>
+            Hi, I'm <span className="text-gradient">Jhe-anne Selle</span>
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
             Passionate Information Systems graduate with experience in graphic design using Canva and digital content creation. I enjoy building user-friendly solutions and creating visually engaging designs that communicate ideas effectively.

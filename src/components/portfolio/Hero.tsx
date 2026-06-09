@@ -1,3 +1,4 @@
+import { Facebook, Mail } from "lucide-react";
 import profileAsset from "@/assets/profile.png.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
 

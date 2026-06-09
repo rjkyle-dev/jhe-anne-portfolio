@@ -4,7 +4,6 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Milestones } from "@/components/portfolio/Milestones";
-
 import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
@@ -13,10 +12,10 @@ import { ScrollProgress } from "@/components/portfolio/ScrollProgress";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
-      { name: "description", content: "Portfolio of Jheanne Selle, an Information Technology graduate and aspiring web developer based in Panabo City." },
-      { property: "og:title", content: "Jheanne Selle — IT Graduate & Aspiring Web Developer" },
-      { property: "og:description", content: "Explore projects, skills, and milestones of an IT graduate passionate about web development." },
+      { title: "Jheanne Selle — IT Graduate & Graphic Design Portfolio" },
+      { name: "description", content: "Portfolio of Jheanne Selle featuring graphic design work, recipe marketing visuals, projects, skills, and milestones." },
+      { property: "og:title", content: "Jheanne Selle — IT Graduate & Graphic Design Portfolio" },
+      { property: "og:description", content: "Explore Jheanne Selle's portfolio featuring recipe graphic design work for KusinaUniversity, skills, and milestones." },
     ],
   }),
   component: Index,
@@ -39,3 +38,4 @@ function Index() {
     </div>
   );
 }
+

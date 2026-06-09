@@ -13,7 +13,7 @@ const info = [
   { label: "Email", value: "jheanneselle28@gmail.com", icon: "✉️", href: "mailto:jheanneselle28@gmail.com" },
   { label: "Phone", value: "+63 963 745 6219", icon: "📞", href: "tel:+639637456219" },
   { label: "Location", value: "Panabo City, PH", icon: "📍", href: "#" },
-  { label: "Facebook", value: "facebook.com/jheanne", icon: "📘", href: "#" },
+  { label: "Facebook", value: "facebook.com/jheanneypilselle", icon: "📘", href: "https://www.facebook.com/jheanneypilselle" },
 ];
 
 export function Contact() {
@@ -41,7 +41,7 @@ export function Contact() {
       <div className="grid lg:grid-cols-5 gap-6">
         <div className="lg:col-span-2 space-y-4 animate-fade-up">
           {info.map((c) => (
-            <a key={c.label} href={c.href} className="glass rounded-2xl p-5 flex items-center gap-4 hover:shadow-glow transition block">
+            <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined} className="glass rounded-2xl p-5 flex items-center gap-4 hover:shadow-glow hover:-translate-y-0.5 transition block">
               <div className="w-12 h-12 rounded-xl bg-gradient-primary grid place-items-center text-xl shadow-glow">{c.icon}</div>
               <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">{c.label}</p>

@@ -193,7 +193,7 @@ export function Projects() {
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6">
           <div className="mx-auto max-w-5xl text-center animate-fade-up">
             <span className="glass mb-5 inline-block rounded-full px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground">
-              Graphic Design Project
+              Creative Works
             </span>
             <h2 className="mx-auto max-w-5xl text-balance text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
               Recipe Graphic Design for{" "}

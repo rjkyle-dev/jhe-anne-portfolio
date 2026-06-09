@@ -33,24 +33,6 @@ export function Hero() {
               Contact Me
             </a>
           </div>
-          <div className="flex items-center gap-3 mt-6">
-            <a
-              href="https://www.facebook.com/jheanneypilselle"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook profile"
-              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
-            >
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:jheanneselle28@gmail.com"
-              aria-label="Send email"
-              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
-          </div>
         </div>
 
         <div className="relative flex justify-center lg:justify-end animate-fade-up" style={{ animationDelay: "0.2s" }}>

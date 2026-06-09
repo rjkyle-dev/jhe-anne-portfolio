@@ -41,8 +41,14 @@ export function Contact() {
       <div className="grid lg:grid-cols-5 gap-6">
         <div className="lg:col-span-2 space-y-4 animate-fade-up">
           {info.map((c) => (
-            <a key={c.label} href={c.href} target={c.href.startsWith("http") ? "_blank" : undefined} rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined} className="glass rounded-2xl p-5 flex items-center gap-4 hover:shadow-glow hover:-translate-y-0.5 transition block">
-              <div className="w-12 h-12 rounded-xl bg-gradient-primary grid place-items-center text-xl shadow-glow">{c.icon}</div>
+            <a
+              key={c.label}
+              href={c.href}
+              target={c.href.startsWith("http") ? "_blank" : undefined}
+              rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="glass rounded-2xl p-5 flex items-center gap-4 hover:shadow-glow hover:-translate-y-1 hover:scale-[1.01] transition cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-xl bg-gradient-primary grid place-items-center text-xl shadow-glow shrink-0">{c.icon}</div>
               <div>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">{c.label}</p>
                 <p className="font-medium">{c.value}</p>

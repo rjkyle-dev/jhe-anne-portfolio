@@ -19,15 +19,36 @@ export function Hero() {
           <span className="glass inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-muted-foreground mb-6">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" /> Available for opportunities
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-8">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6">
             Hi, I'm <span className="text-gradient">Jheanne Selle</span>
           </h1>
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl mb-8">
+            Passionate Information Systems graduate with experience in graphic design using Canva and digital content creation. I enjoy building user-friendly solutions and creating visually engaging designs that communicate ideas effectively.
+          </p>
           <div className="flex flex-wrap gap-3">
             <a href={cvAsset.url} download="Jheanne-Selle-CV.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground font-medium px-6 py-3 rounded-xl shadow-glow hover:scale-[1.02] transition">
               Download CV
             </a>
             <a href="#contact" className="glass inline-flex items-center gap-2 text-foreground font-medium px-6 py-3 rounded-xl hover:bg-white/10 transition">
               Contact Me
+            </a>
+          </div>
+          <div className="flex items-center gap-3 mt-6">
+            <a
+              href="https://www.facebook.com/jheanneypilselle"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook profile"
+              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
+            >
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a
+              href="mailto:jheanneselle28@gmail.com"
+              aria-label="Send email"
+              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
+            >
+              <Mail className="h-5 w-5" />
             </a>
           </div>
         </div>

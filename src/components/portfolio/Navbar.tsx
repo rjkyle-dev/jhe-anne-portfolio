@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#milestones", label: "Milestones" },
-  { href: "#projects", label: "Projects" },
+  { href: "#projects", label: "Creative Works" },
   { href: "#contact", label: "Contact" },
 ];
 

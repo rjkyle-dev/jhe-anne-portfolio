@@ -13,7 +13,7 @@ const info = [
   { label: "Email", value: "jheanneselle28@gmail.com", icon: "✉️", href: "mailto:jheanneselle28@gmail.com" },
   { label: "Phone", value: "+63 963 745 6219", icon: "📞", href: "tel:+639637456219" },
   { label: "Location", value: "Panabo City, PH", icon: "📍", href: "#" },
-  { label: "Facebook", value: "facebook.com/jheanne", icon: "📘", href: "#" },
+  { label: "Facebook", value: "facebook.com/jheanneypilselle", icon: "📘", href: "https://www.facebook.com/jheanneypilselle" },
 ];
 
 export function Contact() {

@@ -1,4 +1,4 @@
-import { Facebook, Mail } from "lucide-react";
+
 import profileAsset from "@/assets/profile.png.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
 
@@ -31,24 +31,6 @@ export function Hero() {
             </a>
             <a href="#contact" className="glass inline-flex items-center gap-2 text-foreground font-medium px-6 py-3 rounded-xl hover:bg-white/10 transition">
               Contact Me
-            </a>
-          </div>
-          <div className="flex items-center gap-3 mt-6">
-            <a
-              href="https://www.facebook.com/jheanneypilselle"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook profile"
-              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
-            >
-              <Facebook className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:jheanneselle28@gmail.com"
-              aria-label="Send email"
-              className="glass inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:shadow-glow hover:-translate-y-0.5 transition"
-            >
-              <Mail className="h-5 w-5" />
             </a>
           </div>
         </div>

@@ -6,7 +6,7 @@ export function Footer() {
           © {new Date().getFullYear()} <span className="text-gradient font-semibold">Jheanne Selle</span>. Crafted with care.
         </p>
         <div className="flex items-center gap-3">
-          <a href="#" aria-label="Facebook" className="glass w-10 h-10 grid place-items-center rounded-xl hover:shadow-glow transition">📘</a>
+          <a href="https://www.facebook.com/jheanneypilselle" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="glass w-10 h-10 grid place-items-center rounded-xl hover:shadow-glow transition">📘</a>
           <a href="mailto:jheanneselle28@gmail.com" aria-label="Email" className="glass w-10 h-10 grid place-items-center rounded-xl hover:shadow-glow transition">✉️</a>
         </div>
       </div>

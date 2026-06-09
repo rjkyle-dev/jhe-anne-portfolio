@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Expand, BriefcaseBusiness, Building2, CalendarRange, Sparkles } from "lucide-react";
-
+import {
+  ChevronLeft,
+  ChevronRight,
+  Expand,
+  BriefcaseBusiness,
+  Building2,
+  CalendarRange,
+  Sparkles,
+} from "lucide-react";
+import { Section } from "./Section";
 import {
   Carousel,
   CarouselContent,
@@ -136,7 +144,7 @@ export function Projects() {
           observer.disconnect();
         }
       },
-      { threshold: 0.25 },
+      { threshold: 0.15 },
     );
 
     observer.observe(node);
@@ -177,167 +185,165 @@ export function Projects() {
   }, [api, isPaused]);
 
   const currentDesign = recipeDesigns[selectedIndex] ?? recipeDesigns[0];
-  const revealClass = isVisible
-    ? "opacity-100 translate-y-0"
-    : "opacity-0 translate-y-8";
+  const revealClass = isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8";
 
   return (
     <>
-      <Section
-        id="projects"
-        eyebrow="Graphic Design Project"
-        title={"Recipe Graphic Design for|KusinaUniversity Online Tutorial Services"}
-        subtitle="Designed a series of recipe graphics for KusinaUniversity Online Tutorial Services during my On-the-Job Training in 2026. These visuals were crafted for digital platforms and educational content, highlighting my skills in Canva, layout design, visual communication, typography, and content presentation."
-      >
-        <div ref={revealRef} className="space-y-8">
-          <div
-            className={`grid gap-4 md:grid-cols-3 transition-all duration-700 ease-out ${revealClass}`}
-          >
-            {detailCards.map((card, index) => {
-              const Icon = card.icon;
-              return (
-                <article
-                  key={card.label}
-                  className="glass rounded-2xl p-5 shadow-soft"
-                  style={{ transitionDelay: `${index * 120}ms` }}
-                >
-                  <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    {card.label}
-                  </p>
-                  <p className="mt-2 text-base font-semibold leading-relaxed">
-                    {card.value}
-                  </p>
-                </article>
-              );
-            })}
+      <section id="projects" className="relative scroll-mt-24 py-24">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6">
+          <div className="mx-auto max-w-5xl text-center animate-fade-up">
+            <span className="glass mb-5 inline-block rounded-full px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground">
+              Graphic Design Project
+            </span>
+            <h2 className="mx-auto max-w-5xl text-balance text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              Recipe Graphic Design for{" "}
+              <span className="text-gradient">KusinaUniversity Online Tutorial Services</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
+              Designed a series of recipe graphics for KusinaUniversity Online Tutorial Services during my On-the-Job Training in 2026. These visuals were crafted for digital platforms and educational content, highlighting my skills in Canva, layout design, visual communication, typography, and content presentation.
+            </p>
           </div>
 
-          <div
-            className={`glass rounded-[2rem] p-4 shadow-glow transition-all duration-700 ease-out md:p-6 ${revealClass}`}
-            style={{ transitionDelay: "140ms" }}
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onFocusCapture={() => setIsPaused(true)}
-            onBlurCapture={() => setIsPaused(false)}
-          >
-            <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                  <Sparkles className="h-3.5 w-3.5 text-secondary" />
-                  Featured design showcase
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold sm:text-3xl">{currentDesign.title}</h3>
-                  <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
-                    {currentDesign.highlight}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3 self-start lg:self-auto">
-                <button
-                  type="button"
-                  onClick={() => api?.scrollPrev()}
-                  className="glass inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:shadow-glow"
-                  aria-label="Previous recipe design"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => api?.scrollNext()}
-                  className="glass inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:shadow-glow"
-                  aria-label="Next recipe design"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
+          <div ref={revealRef} className="space-y-8">
+            <div className={`grid gap-4 md:grid-cols-3 transition-all duration-700 ease-out ${revealClass}`}>
+              {detailCards.map((card, index) => {
+                const Icon = card.icon;
+                return (
+                  <article
+                    key={card.label}
+                    className="glass rounded-2xl p-5 shadow-soft"
+                    style={{ transitionDelay: `${index * 120}ms` }}
+                  >
+                    <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground shadow-glow">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">{card.label}</p>
+                    <p className="mt-2 text-base font-semibold leading-relaxed">{card.value}</p>
+                  </article>
+                );
+              })}
             </div>
 
-            <Carousel
-              setApi={setApi}
-              opts={{ loop: true, align: "center" }}
-              className="w-full"
+            <div
+              className={`glass rounded-[2rem] p-4 shadow-glow transition-all duration-700 ease-out md:p-6 ${revealClass}`}
+              style={{ transitionDelay: "140ms" }}
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+              onFocusCapture={() => setIsPaused(true)}
+              onBlurCapture={() => setIsPaused(false)}
             >
-              <CarouselContent>
-                {recipeDesigns.map((design) => (
-                  <CarouselItem key={design.title}>
-                    <button
-                      type="button"
-                      onClick={() => setActiveDesign(design)}
-                      className="group block w-full text-left"
-                      aria-label={`Open ${design.title} design in larger view`}
-                    >
-                      <div className="rounded-[1.75rem] border border-border/60 bg-card/40 p-3 transition duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-glow md:p-4">
-                        <div className="relative overflow-hidden rounded-[1.25rem] bg-background/80">
-                          <img
-                            src={design.imageUrl}
-                            alt={design.alt}
-                            loading="lazy"
-                            className="mx-auto aspect-square w-full max-w-4xl object-contain transition duration-500 ease-out group-hover:scale-[1.01]"
-                          />
-                          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-card/70 px-4 py-3 backdrop-blur-md">
-                            <div>
-                              <p className="text-sm font-semibold sm:text-base">{design.title}</p>
-                              <p className="text-xs text-muted-foreground sm:text-sm">
-                                Click to expand and inspect the full graphic.
-                              </p>
-                            </div>
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow">
-                              <Expand className="h-4 w-4" />
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+              <div className="mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/40 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    <Sparkles className="h-3.5 w-3.5 text-secondary" />
+                    Featured design showcase
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold sm:text-3xl">{currentDesign.title}</h3>
+                    <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">
+                      {currentDesign.highlight}
+                    </p>
+                  </div>
+                </div>
 
-            <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Canva",
-                  "Layout Design",
-                  "Typography",
-                  "Visual Communication",
-                  "Content Presentation",
-                ].map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-border/60 bg-card/40 px-3 py-1.5 text-xs text-muted-foreground"
+                <div className="flex items-center gap-3 self-start lg:self-auto">
+                  <button
+                    type="button"
+                    onClick={() => api?.scrollPrev()}
+                    className="glass inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:shadow-glow"
+                    aria-label="Previous recipe design"
                   >
-                    {tag}
-                  </span>
-                ))}
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => api?.scrollNext()}
+                    className="glass inline-flex h-11 w-11 items-center justify-center rounded-full transition hover:shadow-glow"
+                    aria-label="Next recipe design"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
 
-              <div className="flex items-center justify-center gap-2 sm:justify-end">
-                {scrollSnaps.map((_, index) => {
-                  const isActive = index === selectedIndex;
-                  return (
-                    <button
-                      key={index}
-                      type="button"
-                      onClick={() => api?.scrollTo(index)}
-                      className={`rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "h-2.5 w-8 bg-gradient-primary shadow-glow"
-                          : "h-2.5 w-2.5 bg-muted hover:bg-secondary"
-                      }`}
-                      aria-label={`Go to recipe design ${index + 1}`}
-                    />
-                  );
-                })}
+              <Carousel setApi={setApi} opts={{ loop: true, align: "center" }} className="w-full">
+                <CarouselContent>
+                  {recipeDesigns.map((design) => (
+                    <CarouselItem key={design.title}>
+                      <button
+                        type="button"
+                        onClick={() => setActiveDesign(design)}
+                        className="group block w-full text-left"
+                        aria-label={`Open ${design.title} design in larger view`}
+                      >
+                        <div className="rounded-[1.75rem] border border-border/60 bg-card/40 p-3 transition duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-glow md:p-4">
+                          <div className="relative overflow-hidden rounded-[1.25rem] bg-background/80">
+                            <img
+                              src={design.imageUrl}
+                              alt={design.alt}
+                              loading="lazy"
+                              className="mx-auto aspect-square w-full max-w-4xl object-contain transition duration-500 ease-out group-hover:scale-[1.01]"
+                            />
+                            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-card/70 px-4 py-3 backdrop-blur-md">
+                              <div>
+                                <p className="text-sm font-semibold sm:text-base">{design.title}</p>
+                                <p className="text-xs text-muted-foreground sm:text-sm">
+                                  Click to expand and inspect the full graphic.
+                                </p>
+                              </div>
+                              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-primary text-primary-foreground shadow-glow">
+                                <Expand className="h-4 w-4" />
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </button>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
+
+              <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Canva",
+                    "Layout Design",
+                    "Typography",
+                    "Visual Communication",
+                    "Content Presentation",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border/60 bg-card/40 px-3 py-1.5 text-xs text-muted-foreground"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-center gap-2 sm:justify-end">
+                  {scrollSnaps.map((_, index) => {
+                    const isActive = index === selectedIndex;
+                    return (
+                      <button
+                        key={index}
+                        type="button"
+                        onClick={() => api?.scrollTo(index)}
+                        className={`rounded-full transition-all duration-300 ${
+                          isActive
+                            ? "h-2.5 w-8 bg-gradient-primary shadow-glow"
+                            : "h-2.5 w-2.5 bg-muted hover:bg-secondary"
+                        }`}
+                        aria-label={`Go to recipe design ${index + 1}`}
+                      />
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       <Dialog open={!!activeDesign} onOpenChange={(open) => !open && setActiveDesign(null)}>
         <DialogContent className="max-h-[92vh] max-w-5xl overflow-hidden border-border/60 bg-card/95 p-0 backdrop-blur-xl">
@@ -365,4 +371,5 @@ export function Projects() {
     </>
   );
 }
+
 

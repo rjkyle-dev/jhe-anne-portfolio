@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Expand, BriefcaseBusiness, Building2, CalendarRange, Sparkles } from "lucide-react";
-import { Section } from "./Section";
+
 import {
   Carousel,
   CarouselContent,

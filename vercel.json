@@ -3,19 +3,14 @@
   "outputDirectory": "dist",
   "framework": null,
   "installCommand": "bun install",
-  "functions": {
-    "dist/server/server.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/dist/client/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/client/assets/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "/dist/server/server.js"
+      "source": "/(.*)",
+      "destination": "/server/server.js"
     }
   ]
 }
